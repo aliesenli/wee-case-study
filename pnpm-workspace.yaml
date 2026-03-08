@@ -1,0 +1,11 @@
+packages:
+  - frontend
+  - backend
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@prisma/engines'
+  - prisma
+
+onlyBuiltDependencies:
+  - esbuild
