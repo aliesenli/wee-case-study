@@ -1,0 +1,66 @@
+$color-primary:      #1a2980;
+$color-primary-dark: #0f1755;
+$color-accent:       #0066cc;
+$color-accent-light: #e8f0fe;
+
+$color-bg:           #f4f6fb;
+$color-surface:      #ffffff;
+$color-surface-alt:  #f9fafc;
+$color-border:       #e2e8f0;
+
+$color-text:         #1a1a2e;
+$color-text-muted:   #64748b;
+$color-text-light:   #94a3b8;
+
+$color-success:      #059669;
+$color-success-bg:   #d1fae5;
+$color-error:        #dc2626;
+$color-error-bg:     #fee2e2;
+$color-warning:      #d97706;
+
+$font-family:    system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-size-xs:   0.75rem;
+$font-size-sm:   0.875rem;
+$font-size-base: 1rem;
+$font-size-lg:   1.125rem;
+$font-size-xl:   1.25rem;
+$font-size-2xl:  1.5rem;
+$font-size-3xl:  1.875rem;
+$font-size-4xl:  2.25rem;
+
+$space-1:   0.25rem;
+$space-2:   0.5rem;
+$space-3:   0.75rem;
+$space-4:   1rem;
+$space-5:   1.25rem;
+$space-6:   1.5rem;
+$space-8:   2rem;
+$space-10:  2.5rem;
+$space-12:  3rem;
+$space-16:  4rem;
+$space-20:  5rem;
+
+$radius-sm:   0.25rem;
+$radius-base: 0.5rem;
+$radius-lg:   0.75rem;
+$radius-xl:   1rem;
+$radius-2xl:  1.5rem;
+$radius-full: 9999px;
+
+$shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md:  0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-lg:  0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+$shadow-xl:  0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+
+$transition-fast:   150ms ease;
+$transition-base:   250ms ease;
+$transition-slow:   400ms ease;
+
+$bp-sm:  576px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+$bp-2xl: 1536px;
+
+$container-max: 1200px;
+$navbar-height: 64px;
