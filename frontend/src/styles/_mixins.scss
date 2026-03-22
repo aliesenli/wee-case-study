@@ -1,0 +1,127 @@
+@use 'variables' as *;
+
+@mixin respond-to($bp) {
+  @if $bp == sm    { @media (min-width: $bp-sm)  { @content; } }
+  @else if $bp == md  { @media (min-width: $bp-md)  { @content; } }
+  @else if $bp == lg  { @media (min-width: $bp-lg)  { @content; } }
+  @else if $bp == xl  { @media (min-width: $bp-xl)  { @content; } }
+  @else if $bp == 2xl { @media (min-width: $bp-2xl) { @content; } }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: $space-4;
+
+  @include respond-to(md) {
+    padding-inline: $space-6;
+  }
+}
+
+@mixin card($padding: $space-6) {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  padding: $padding;
+  border: 1px solid $color-border;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  font-family: $font-family;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  padding: $space-2 $space-5;
+  border-radius: $radius-base;
+  border: none;
+  cursor: pointer;
+  transition: background $transition-fast, box-shadow $transition-fast, transform $transition-fast;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    transform: translateY(-1px);
+  }
+
+  &:not(:disabled):active {
+    transform: translateY(0);
+  }
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: $color-primary;
+  color: #fff;
+
+  &:not(:disabled):hover {
+    background: $color-primary-dark;
+    box-shadow: $shadow-md;
+  }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  background: transparent;
+  color: $color-primary;
+  border: 1.5px solid $color-primary;
+
+  &:not(:disabled):hover {
+    background: $color-accent-light;
+  }
+}
+
+@mixin form-input {
+  width: 100%;
+  padding: $space-3 $space-4;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $color-text;
+  background: $color-surface;
+  border: 1.5px solid $color-border;
+  border-radius: $radius-base;
+  outline: none;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+  appearance: none;
+
+  &::placeholder {
+    color: $color-text-light;
+  }
+
+  &:focus {
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.15);
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin spinner-keyframes {
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+}
