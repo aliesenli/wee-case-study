@@ -15,7 +15,6 @@ export function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
-          <span className={styles.brandIcon}>✈</span>
           <span>WEE Flugbuchung</span>
         </Link>
 

@@ -10,7 +10,7 @@ Ein Flugbuchungssystem als Single Page Application (SPA) mit RESTful Web Service
 | Backend | Node.js · Express.js · TypeScript |
 | Auth | better-auth 1.x (Email + Passwort) |
 | ORM | Drizzle ORM |
-| Datenbank | PostgreSQL 16 |
+| Datenbank | PostgreSQL 18 |
 | Laufzeitumgebung | Node.js ≥ 20 · pnpm ≥ 9 · Docker |
 
 ---
@@ -54,7 +54,6 @@ cp frontend/.env.example frontend/.env # (optional, Standard passt für local de
 | Variable | Standard | Beschreibung |
 |----------|----------|--------------|
 | `DATABASE_URL` | `postgresql://wee_user:wee_password@localhost:5432/wee_flights` | PostgreSQL-Verbindung |
-| `BETTER_AUTH_SECRET` | _(ändern!)_ | Zufälliger String ≥ 32 Zeichen |
 | `BETTER_AUTH_URL` | `http://localhost:3001` | Backend-URL (für Cookie-Domain) |
 | `FRONTEND_URL` | `http://localhost:5173` | CORS-Origin |
 | `PORT` | `3001` | Serverport |
