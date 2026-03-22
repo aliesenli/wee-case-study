@@ -1,0 +1,196 @@
+@use 'globals' as *;
+
+.page {
+  @include container;
+  padding-top: $space-10;
+  padding-bottom: $space-16;
+  min-height: calc(100dvh - $navbar-height);
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: $space-6;
+  color: $color-text;
+}
+
+.filterBar {
+  display: flex;
+  gap: $space-4;
+  flex-wrap: wrap;
+  margin-bottom: $space-6;
+  padding: $space-4;
+  background: $color-surface;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border;
+  box-shadow: $shadow-sm;
+}
+
+.filterField {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  min-width: 180px;
+}
+
+.filterLabel {
+  font-size: $font-size-xs;
+  font-weight: 600;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filterInput {
+  @include form-input;
+  font-size: $font-size-sm;
+  padding: $space-2 $space-3;
+}
+
+// Loading / error / empty
+.loading {
+  @include flex-center;
+  gap: $space-3;
+  padding: $space-16;
+  color: $color-text-muted;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid $color-border;
+  border-top-color: $color-primary;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.error {
+  background: $color-error-bg;
+  color: $color-error;
+  padding: $space-4 $space-5;
+  border-radius: $radius-lg;
+  font-weight: 500;
+}
+
+.empty {
+  @include flex-center;
+  flex-direction: column;
+  gap: $space-3;
+  padding: $space-20 $space-4;
+  color: $color-text-muted;
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+// Booking cards
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.card {
+  @include card($space-5);
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.cardHeader {
+  @include flex-between;
+}
+
+.flightNum {
+  font-weight: 700;
+  font-size: $font-size-lg;
+  color: $color-primary;
+}
+
+.status {
+  font-size: $font-size-xs;
+  font-weight: 700;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statusConfirmed {
+  background: $color-success-bg;
+  color: $color-success;
+}
+
+.statusCancelled {
+  background: $color-error-bg;
+  color: $color-error;
+}
+
+// Route display inside booking card
+.route {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  padding: $space-4;
+  background: $color-surface-alt;
+  border-radius: $radius-base;
+}
+
+.routeEndpoint {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.routeTime {
+  font-size: $font-size-xl;
+  font-weight: 800;
+  color: $color-text;
+}
+
+.routeCity {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.routeArrow {
+  flex: 1;
+  text-align: center;
+  font-size: $font-size-xl;
+  color: $color-accent;
+}
+
+// Meta row
+.cardMeta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-3;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.metaLabel {
+  font-size: $font-size-xs;
+  font-weight: 600;
+  color: $color-text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.price {
+  font-size: $font-size-lg;
+  font-weight: 800;
+  color: $color-primary;
+}

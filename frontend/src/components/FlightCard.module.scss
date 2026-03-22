@@ -1,0 +1,175 @@
+@use 'globals' as *;
+.card {
+  @include card($space-5);
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+.airline {
+  @include flex-between;
+}
+
+.airlineName {
+  font-weight: 700;
+  font-size: $font-size-lg;
+  color: $color-primary;
+}
+
+.flightNumber {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  background: $color-surface-alt;
+  padding: $space-1 $space-3;
+  border-radius: $radius-full;
+  border: 1px solid $color-border;
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.endpoint {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.endpointRight {
+  text-align: right;
+}
+
+.time {
+  font-size: $font-size-2xl;
+  font-weight: 800;
+  color: $color-text;
+  letter-spacing: -0.02em;
+}
+
+.city {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin-top: $space-1;
+  @include truncate;
+}
+
+.dateLabel {
+  font-size: $font-size-xs;
+  color: $color-text-light;
+}
+
+.durationBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-1;
+  flex: 1;
+}
+
+.duration {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  font-weight: 600;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: $space-1;
+  color: $color-text-light;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-border;
+  flex-shrink: 0;
+}
+
+.dash {
+  flex: 1;
+  height: 1px;
+  background: $color-border;
+}
+
+.plane {
+  font-size: $font-size-lg;
+  color: $color-accent;
+  flex-shrink: 0;
+}
+
+.direct {
+  font-size: $font-size-xs;
+  color: $color-text-light;
+}
+
+.footer {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $space-3;
+  padding-top: $space-4;
+  border-top: 1px solid $color-border;
+}
+
+.ticketInfo {
+  display: flex;
+  align-items: center;
+}
+
+.available {
+  font-size: $font-size-sm;
+  color: $color-success;
+  font-weight: 600;
+
+  &::before {
+    content: "●  ";
+    font-size: $font-size-xs;
+  }
+}
+
+.soldOut {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  font-weight: 600;
+
+  &::before {
+    content: "○  ";
+    font-size: $font-size-xs;
+  }
+}
+
+.priceBlock {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.price {
+  font-size: $font-size-2xl;
+  font-weight: 800;
+  color: $color-text;
+}
+
+.bookBtn {
+  @include btn-primary;
+  padding: $space-3 $space-6;
+  font-size: $font-size-base;
+
+  &:disabled {
+    background: $color-border;
+    color: $color-text-muted;
+    transform: none;
+    cursor: not-allowed;
+  }
+}
