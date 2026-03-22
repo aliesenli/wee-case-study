@@ -1,0 +1,80 @@
+@use 'globals' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 200;
+  @include flex-center;
+  padding: $space-4;
+  animation: fadeIn $transition-fast;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+.modal {
+  background: $color-surface;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-xl;
+  width: 100%;
+  max-width: 400px;
+  padding: $space-10 $space-8;
+  text-align: center;
+  animation: slideUp $transition-base;
+
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: $color-success-bg;
+  color: $color-success;
+  font-size: $font-size-3xl;
+  font-weight: 900;
+  @include flex-center;
+  margin: 0 auto $space-5;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: 800;
+  color: $color-text;
+  margin-bottom: $space-3;
+}
+
+.text {
+  font-size: $font-size-base;
+  color: $color-text-muted;
+  line-height: 1.6;
+  margin-bottom: $space-6;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+}
+
+.closeBtn {
+  @include btn-outline;
+  width: 100%;
+  justify-content: center;
+}
+
+.historyBtn {
+  @include btn-primary;
+  justify-content: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

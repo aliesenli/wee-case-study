@@ -1,0 +1,67 @@
+@use 'globals' as *;
+
+.pagination {
+  @include flex-between;
+  flex-wrap: wrap;
+  gap: $space-4;
+  margin-top: $space-8;
+  padding-top: $space-6;
+  border-top: 1px solid $color-border;
+}
+
+.info {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
+}
+
+.btn {
+  @include btn-base;
+  min-width: 36px;
+  height: 36px;
+  padding: $space-1;
+  border-radius: $radius-base;
+  background: $color-surface;
+  color: $color-text;
+  border: 1.5px solid $color-border;
+  font-size: $font-size-sm;
+
+  &:not(:disabled):hover {
+    background: $color-surface-alt;
+    border-color: $color-accent;
+    color: $color-accent;
+    transform: none;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.active {
+  background: $color-primary;
+  color: #fff;
+  border-color: $color-primary;
+
+  &:not(:disabled):hover {
+    background: $color-primary-dark;
+    border-color: $color-primary-dark;
+    color: #fff;
+  }
+}
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: $font-size-sm;
+  color: $color-text-light;
+}

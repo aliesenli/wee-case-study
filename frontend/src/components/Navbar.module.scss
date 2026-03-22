@@ -1,0 +1,87 @@
+@use 'globals' as *;
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: $navbar-height;
+  background: $color-primary;
+  box-shadow: $shadow-md;
+}
+
+.inner {
+  @include container;
+  @include flex-between;
+  height: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  color: #fff;
+  font-size: $font-size-xl;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+}
+
+.brandIcon {
+  font-size: $font-size-2xl;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: $font-size-sm;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.userBadge {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: $font-size-sm;
+  padding-inline: $space-3;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.signOutBtn {
+  @include btn-base;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: $space-2 $space-4;
+  font-size: $font-size-sm;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.registerBtn {
+  @include btn-base;
+  background: #fff;
+  color: $color-primary;
+  padding: $space-2 $space-4;
+  font-size: $font-size-sm;
+
+  &:hover {
+    background: $color-accent-light;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+}

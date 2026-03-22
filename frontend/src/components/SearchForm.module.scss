@@ -1,0 +1,75 @@
+@use 'globals' as *;
+.form {
+  @include card($space-6);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-4;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-text-muted;
+}
+
+.input {
+  @include form-input;
+}
+
+.checkboxField {
+  justify-content: flex-end;
+  padding-bottom: $space-1;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  color: $color-text;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: $color-primary;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: $space-3;
+  margin-top: $space-5;
+  padding-top: $space-5;
+  border-top: 1px solid $color-border;
+}
+
+.resetBtn {
+  @include btn-outline;
+}
+
+.searchBtn {
+  @include btn-primary;
+  padding: $space-3 $space-8;
+}
