@@ -31,7 +31,7 @@ export function RegisterPage() {
   return (
     <main className={styles.page}>
       <div className={styles.card}>
-        <div className={styles.brand}>✈ WEE Flugbuchung</div>
+        <div className={styles.brand}>WEE Flugbuchung</div>
         <h1 className={styles.title}>Registrieren</h1>
 
         <form onSubmit={handleSubmit} className={styles.form}>
